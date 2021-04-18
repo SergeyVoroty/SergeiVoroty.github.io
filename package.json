@@ -1,0 +1,31 @@
+{
+  "name": "sergeivoroty.github.io",
+  "version": "1.0.0",
+  "description": "The Second Lesson of MetaLamo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SergeyVoroty/SergeiVoroty.github.io.git"
+  },
+  "author": "Sergey_Voroty <sergei.vorot22@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SergeyVoroty/SergeiVoroty.github.io/issues"
+  },
+  "homepage": "https://github.com/SergeyVoroty/SergeiVoroty.github.io#readme",
+  "devDependencies": {
+    "css-loader": "^5.2.2",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.1",
+    "pug": "^3.0.2",
+    "pug-html-loader": "^1.1.5",
+    "pug-loader": "^2.4.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.33.2",
+    "webpack-cli": "^4.6.0"
+  }
+}
