@@ -1,0 +1,24 @@
+mixin textField(def)
+    -let textFieldClass = 'textField'
+    -textFieldClass += def ? ' textField_default' : ''
+
+    .textFieldBorder
+        input(class= textFieldClass, type= 'email', placeholder= 'Email')
+
+mixin button(options)
+    -var buttonClass = 'btn'
+    case options.type
+        when 'fillButton'
+            -buttonClass += ' btn_default'
+        when 'borderedButton'
+            -buttonClass += ' btn_bordered'
+        when 'goestButton'
+            -buttonClass += ' btn_goest'
+        when 'longButton'
+            -buttonClass += ' btn_long'
+        default
+            -buttonClass += ' btn_default'
+
+    .btnBorder
+        a(href = options.link, class = buttonClass)= options.title
+
