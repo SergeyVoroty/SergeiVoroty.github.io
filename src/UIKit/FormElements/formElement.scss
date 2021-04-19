@@ -1,0 +1,59 @@
+$colorDarkShade100: #1F2041;
+$colorDarkShade75:rgba(31, 32, 65, 0.75);
+$colorDarkShade50:rgba(31, 32, 65, 0.50);
+$colorDarkShade25:rgba(31, 32, 65, 0.25);
+$colorDarkShade05:rgba(31, 32, 65, 0.05);
+$colorPurple: #BC9CFF;
+$colorGreen: #6FCF97;
+$gradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+body {
+  font-family: 'Montserat-Regular';
+  font-size: 14px;
+  color: $colorDarkShade75;
+}
+h1, h2, h3 {
+  font-family: 'Montserat-Bold';
+}
+h1 {
+  font-size: 24px;
+}
+h2 {
+  font-size: 19px;
+}
+h3 {
+  font-size: 12px;
+}
+a {
+  text-decoration: none;
+}
+.btnBorder {
+  display: block;
+  width: 99px;
+  height: 44px;
+  border-radius: 22px;
+  background: $gradient;
+  .btn {
+    display: block;
+    border-radius: 22px;
+    text-align: center;
+    color: #fff;
+    line-height: 44px;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  .btn:hover {
+    opacity: 0.5;
+  }
+  .btn_default {
+    background: $gradient;
+  }
+  .btn_bordered {
+    background: #fff;
+    width: 95px;
+    height: 40px;
+    line-height: 40px;
+    margin: 2px 2px;
+    margin-top: 2px;
+    color: $colorPurple;
+  }
+}
