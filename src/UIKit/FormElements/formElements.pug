@@ -20,6 +20,23 @@ mixin button(options)
         default
             -buttonClass += ' btn_default'
 
+    input(type= 'button' value= options.title class= buttonClass)
 
-    div(class= buttonClass)
-        a(href = options.link class= 'btn_link')= options.title ? options.title : 'Click Me'
+
+mixin textField(options)
+    -var textfieldClass = 'textfield'
+    case options.type
+        when 'Default'
+            -textfieldClass += ' textfield_default'
+        when 'Dropdown'
+            -textfieldClass += ' textfield_dropdown'
+        when 'Masked'
+            -textfieldClass += ' textfield_masked'
+        when 'DateDropdown'
+            -textfieldClass += ' texfield_dateDropdown'
+        when 'FilterDateDropdown'
+            -textfieldClass += ' texfield_filter_dateDropdown'
+        when 'SubscriptionTextField'
+            -textfieldClass += ' textfield_subscription'
+
+    input(type= 'textfield')

@@ -27,67 +27,30 @@ h3 {
 a {
   text-decoration: none;
 }
-.flex {}
 .btn {
-
   display: block;
   width: 99px;
   height: 44px;
-  background: $gradient;
   border-radius: 22px;
-  .btn_link {
-    display: block;
-    size: auto;
-    color: #fff;
-    text-align: center;
-    line-height: 44px;
-    text-transform: uppercase;
-    border-radius: 22px;
-  }
+  border: none;
+  font-size: 12px;
+  color: #fff;
+  text-transform: uppercase;
+  z-index: 0;
+  margin: 0;
+  padding: 0;
 }
-.btn_bordered {
-  .btn_link {
-    position: relative;
-    width: 95px;
-    height: 40px;
-    top: 2px;
-    color: $colorPurple;
-    margin: 2px;
-    background: #fff;
-
-  }
-}
-.btn_goest{
-  background: none;
-  .btn_link {
-    background: none;
-    color: $colorPurple;
-  }
-}
-.btn:hover {
-  opacity: 0.5;
-}
-.btn_goest:hover {
-  opacity: 1;
-  .btn_link {
-    color: $colorDarkShade50;
-  }
+.btn_default {
+  background: $gradient;
 }
 .btn_long {
   width: 320px;
-  .btn_link {
-    width: 320px;
-  }
 }
-.btn_long:after {
+.long:after {
   content: url("./arrow_forward.svg");
   display: block;
-  color: #fff;
-  font-size: 24px;
-  text-align: center;
   width: 44px;
   height: 44px;
-  line-height: 44px;
-  float: right;
   margin-top: -44px;
+  float: right;
 }
