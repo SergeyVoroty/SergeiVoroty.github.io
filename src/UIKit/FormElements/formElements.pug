@@ -11,15 +11,15 @@ mixin button(options)
     case options.type
         when 'fillButton'
             -buttonClass += ' btn_default'
+            if options.long
+                -buttonClass += ' btn_long'
         when 'borderedButton'
             -buttonClass += ' btn_bordered'
         when 'goestButton'
             -buttonClass += ' btn_goest'
-        when 'longButton'
-            -buttonClass += ' btn_long'
         default
             -buttonClass += ' btn_default'
 
-    .btnBorder
-        a(href = options.link, class = buttonClass)= options.title ? options.title : 'Click Me'
 
+    div(class= buttonClass)
+        a(href = options.link class= 'btn_link')= options.title ? options.title : 'Click Me'

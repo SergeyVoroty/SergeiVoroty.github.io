@@ -1,3 +1,4 @@
+
 $colorDarkShade100: #1F2041;
 $colorDarkShade75:rgba(31, 32, 65, 0.75);
 $colorDarkShade50:rgba(31, 32, 65, 0.50);
@@ -26,34 +27,67 @@ h3 {
 a {
   text-decoration: none;
 }
-.btnBorder {
+.flex {}
+.btn {
+
   display: block;
   width: 99px;
   height: 44px;
-  border-radius: 22px;
   background: $gradient;
-  .btn {
+  border-radius: 22px;
+  .btn_link {
     display: block;
-    border-radius: 22px;
-    text-align: center;
+    size: auto;
     color: #fff;
+    text-align: center;
     line-height: 44px;
-    font-size: 12px;
     text-transform: uppercase;
+    border-radius: 22px;
   }
-  .btn:hover {
-    opacity: 0.5;
-  }
-  .btn_default {
-    background: $gradient;
-  }
-  .btn_bordered {
-    background: #fff;
+}
+.btn_bordered {
+  .btn_link {
+    position: relative;
     width: 95px;
     height: 40px;
-    line-height: 40px;
-    margin: 2px 2px;
-    margin-top: 2px;
+    top: 2px;
+    color: $colorPurple;
+    margin: 2px;
+    background: #fff;
+
+  }
+}
+.btn_goest{
+  background: none;
+  .btn_link {
+    background: none;
     color: $colorPurple;
   }
+}
+.btn:hover {
+  opacity: 0.5;
+}
+.btn_goest:hover {
+  opacity: 1;
+  .btn_link {
+    color: $colorDarkShade50;
+  }
+}
+.btn_long {
+  width: 320px;
+  .btn_link {
+    width: 320px;
+  }
+}
+.btn_long:after {
+  content: url("./arrow_forward.svg");
+  display: block;
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  float: right;
+  margin-top: -44px;
 }
