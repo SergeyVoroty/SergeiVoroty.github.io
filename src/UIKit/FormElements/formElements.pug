@@ -19,24 +19,17 @@ mixin button(options)
             -buttonClass += ' btn_goest'
         default
             -buttonClass += ' btn_default'
-
-    input(type= 'button' value= options.title class= buttonClass)
+    div(class= buttonClass)
+        input(type= 'button' value= options.title).btn_insert
 
 
 mixin textField(options)
     -var textfieldClass = 'textfield'
-    case options.type
-        when 'Default'
-            -textfieldClass += ' textfield_default'
-        when 'Dropdown'
-            -textfieldClass += ' textfield_dropdown'
-        when 'Masked'
-            -textfieldClass += ' textfield_masked'
-        when 'DateDropdown'
-            -textfieldClass += ' texfield_dateDropdown'
-        when 'FilterDateDropdown'
-            -textfieldClass += ' texfield_filter_dateDropdown'
-        when 'SubscriptionTextField'
-            -textfieldClass += ' textfield_subscription'
+    if options.isDropdown
+        -textfieldClass += options.isDropdown ? ' textfield_dropdown' : ''
+        -textfieldClass += options.dropdown.dateDropdown ? ' texfield_dateDropdown' : ''
+        -textfieldClass += options.dropdown.filterDropdowm ? ' texfield_filter_dateDropdown' : ''
+    -textfieldClass += options.subscription ? ' textfield_subscription' : ''
 
-    input(type= 'textfield')
+    div(class= textfieldClass)
+        input(type= options.type placeholder= options.placeholder name= options.name).textfield_insert
