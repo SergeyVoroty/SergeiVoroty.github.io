@@ -6,6 +6,10 @@ hr
 +button({type: 'fillButton', link: '#', title: 'Перейти к оплате', long: true})
 
 hr
+hr
 
-+textField({type: 'email', placeholder: 'Email', name: 'email'})
-+textField({type: 'text', isDropdown: true, placeholder: 'Сколько гостей', dropdown:{dateDropdown: false, FilterDropdown: false}})
++textField({name:'default',type:'email',value:'email'})
++textField({name:'default',type:'email',value:'Сколько гостей', dropdown:true})
++textField({name:'default',type:'email',value:'email', dropdown:true, textfieldIsDate: true})
++textField({name:'default',type:'email',value:'email', dropdown:true, textfieldIsDate: true, textfieldIsFilterDate: true})
++textField({name:'default',type:'email',value:'2 спальни, 1 гостинная', dropdown:true})

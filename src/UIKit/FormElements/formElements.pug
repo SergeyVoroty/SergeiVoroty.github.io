@@ -1,11 +1,4 @@
 
-mixin textField(def)
-    -let textFieldClass = 'textField'
-    -textFieldClass += def ? ' textField_default' : ''
-
-    .textFieldBorder
-        input(class= textFieldClass, type= 'email', placeholder= 'Email')
-
 mixin button(options)
     -var buttonClass = 'btn'
     case options.type
@@ -24,12 +17,22 @@ mixin button(options)
 
 
 mixin textField(options)
+    -var type = options.type ? options.type : 'text'
+    -var name = options.name ? options.name : 'default'
+    -var value = options.value ? options.value : 'default'
     -var textfieldClass = 'textfield'
-    if options.isDropdown
-        -textfieldClass += options.isDropdown ? ' textfield_dropdown' : ''
-        -textfieldClass += options.dropdown.dateDropdown ? ' texfield_dateDropdown' : ''
-        -textfieldClass += options.dropdown.filterDropdowm ? ' texfield_filter_dateDropdown' : ''
-    -textfieldClass += options.subscription ? ' textfield_subscription' : ''
-
-    div(class= textfieldClass)
-        input(type= options.type placeholder= options.placeholder name= options.name).textfield_insert
+    if options.textfieldIsDate
+        -value = 'ДД.ММ.ГГГГ'
+        -type = 'text'
+    if options.textfieldIsFilterDate
+        -value = '19 авг - 23 авг'
+        -type = 'text'
+    -textfieldClass += options.dropdown ? ' textfield_dropdown' : ''
+    -textfieldClass += options.textfieldIsDate ? ' textfield_date_dropdown' : ''
+    -textfieldClass += options.textfieldIsFilterDate ? ' textfield_filter_date_dropdown' : ''
+    if options.dropdown
+        .textfieldflex
+            input(type= type name = name value= value readonly='true' class= textfieldClass)
+            .expend_more_icon
+    else
+        input(type= type name = name value= value class= textfieldClass)
